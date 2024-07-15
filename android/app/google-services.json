@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "378878373707",
+    "project_id": "bigqazaq-30ff2",
+    "storage_bucket": "bigqazaq-30ff2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378878373707:android:3af2808a08d468f38942ce",
+        "android_client_info": {
+          "package_name": "com.example.big_qazaq_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSz7pngsaM3U1BOf7KHQPfoOXeJczDqgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video.js M3U Stream Player with Quality Selector</title>
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <!-- Quality Levels CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/2.0.9/videojs-contrib-quality-levels.min.css" rel="stylesheet" />
+    <!-- HTTP Source Selector CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/videojs-http-source-selector@latest/dist/videojs-http-source-selector.css" rel="stylesheet" />
+</head>
+<body>
+    <video-js id="my_video" class="vjs-default-skin vjs-big-play-centered" controls preload="auto" width="100%" height="400">
+    </video-js>
+
+    <!-- Video.js JavaScript -->
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <!-- Quality Levels Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/2.0.9/videojs-contrib-quality-levels.min.js"></script>
+    <!-- HTTP Source Selector Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/videojs-http-source-selector@latest/dist/videojs-http-source-selector.min.js"></script>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoUrl = urlParams.get('url');
+
+        if (videoUrl) {
+            // Initialize Video.js
+            var player = videojs('my_video');
+
+            // Set the video source
+            player.src({
+                src: videoUrl,
+                type: 'application/x-mpegURL'
+            });
+
+            // Add Quality Levels Plugin
+            player.qualityLevels();
+
+            // Add HTTP Source Selector Plugin
+            player.httpSourceSelector();
+
+            // Play the video
+            player.play();
+        } else {
+            console.error('No video URL provided.');
+        }
+    </script>
+</body>
+</html>
